@@ -1,4 +1,4 @@
-Feature: As a user I want to be able to increase the counter value
+Feature: As_a_user_I_want_to_be_able_to_increase_the_counter_value
 
   Scenario: Increment once
     Given Counter is initialized

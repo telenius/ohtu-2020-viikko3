@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="As a user I want to be able to increase the counter value" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-02-02T17:18:31" hostname="DESKTOP-1Q8SKGO" time="0.018">
+<testsuite name="As_a_user_I_want_to_be_able_to_increase_the_counter_value" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-02-02T17:54:26" hostname="DESKTOP-1Q8SKGO" time="0.017">
   <properties/>
-  <testcase name="Increment once" classname="As a user I want to be able to increase the counter value" time="0.014"/>
-  <testcase name="Increment by many" classname="As a user I want to be able to increase the counter value" time="0.001"/>
-  <testcase name="Increment many times" classname="As a user I want to be able to increase the counter value" time="0.001"/>
-  <system-out><![CDATA[Feature: As a user I want to be able to increase the counter value
+  <testcase name="Increment once" classname="As_a_user_I_want_to_be_able_to_increase_the_counter_value" time="0.014"/>
+  <testcase name="Increment by many" classname="As_a_user_I_want_to_be_able_to_increase_the_counter_value" time="0.001"/>
+  <testcase name="Increment many times" classname="As_a_user_I_want_to_be_able_to_increase_the_counter_value" time="0.001"/>
+  <system-out><![CDATA[Feature: As_a_user_I_want_to_be_able_to_increase_the_counter_value
 
   Scenario: Increment once       ?[90m# src/test/resources/ohtu/increasingCounter.feature:3?[0m
     ?[32mGiven ?[0m?[32mCounter is initialized?[0m ?[90m# Stepdefs.counterIsInitialized()?[0m
