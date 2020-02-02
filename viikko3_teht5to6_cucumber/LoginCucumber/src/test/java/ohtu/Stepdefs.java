@@ -25,11 +25,23 @@ public class Stepdefs {
         inputLines = new ArrayList<>();      
     }
     
+    @Given("user {string} with password {string} is created")
+    public void commandUserCreated(String user, String password) throws Throwable {
+        inputLines.add("new");
+        inputLines.add(user);
+        inputLines.add(password);
+    }
+    
+    @Given("^command new is selected$")
+    public void commandNewSelected() throws Throwable {
+        inputLines.add("new");
+    }
+    
     @Given("^command login is selected$")
     public void commandLoginSelected() throws Throwable {
         inputLines.add("login");
     }
-
+    
     @When("username {string} and password {string} are entered")
     public void usernameAndWrongPasswordAreEntered(String username, String password) {
        inputLines.add(username);
