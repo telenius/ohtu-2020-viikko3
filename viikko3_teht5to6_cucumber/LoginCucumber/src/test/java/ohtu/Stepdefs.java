@@ -25,7 +25,7 @@ public class Stepdefs {
         inputLines = new ArrayList<>();      
     }
     
-    @Given("user {string} with password {string} is created")
+    @Given("user {string} with password {string} exists")
     public void commandUserCreated(String user, String password) throws Throwable {
         inputLines.add("new");
         inputLines.add(user);
@@ -43,7 +43,7 @@ public class Stepdefs {
     }
     
     @When("username {string} and password {string} are entered")
-    public void usernameAndWrongPasswordAreEntered(String username, String password) {
+    public void usernameAndPasswordAreEntered(String username, String password) {
        inputLines.add(username);
        inputLines.add(password);
        
@@ -53,7 +53,7 @@ public class Stepdefs {
     }    
     
     @When("username {string} and wrong password {string} are entered")
-    public void usernameAndPasswordAreEntered(String username, String password) {
+    public void usernameAndWrongPasswordAreEntered(String username, String password) {
        inputLines.add(username);
        inputLines.add(password+"wrong");
        
@@ -71,8 +71,7 @@ public class Stepdefs {
        app = new App(io, auth);
        app.run();
     }
-    
-    
+      
     
     @Then("system will respond with {string}")
     public void systemWillRespondWith(String expectedOutput) {

@@ -25,10 +25,12 @@ public class AuthenticationService {
     }
 
     public boolean createUser(String username, String password) {
+    	
         if (userDao.findByName(username) != null) {
             return false;
         }
 
+        // validity check of username and password
         if (invalid(username, password)) {
             return false;
         }
@@ -58,11 +60,6 @@ public class AuthenticationService {
     	
     	// salasana ei saa koostua pelkästään kirjaimista
     	if (password.matches("^[a-zA-Z]+$")) {
-    		return true;
-    	}
-    	
-    	// käyttäjätunnus ei saa olla vielä käytössä
-    	if (username.length()<3) {
     		return true;
     	}
     	
