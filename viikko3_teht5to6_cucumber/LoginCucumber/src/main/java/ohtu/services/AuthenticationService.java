@@ -41,21 +41,31 @@ public class AuthenticationService {
     private boolean invalid(String username, String password) {
         // validity check of username and password
 
-        // k‰ytt‰j‰tunnuksen on oltava merkeist‰ a-z koostuva 
-    	
     	// k‰ytt‰j‰tunnuksen on oltava v‰hint‰‰n 3 merkin pituinen merkkijono
     	if (username.length()<3) {
     		return true;
     	}
-    	
-    	// k‰ytt‰j‰tunnus ei saa olla viel‰ k‰ytˆss‰
-    	
+
+    	// k‰ytt‰j‰tunnuksen on oltava merkeist‰ a-z koostuva
+    	if (!username.matches("^[a-z]+$")) {
+    		return true;
+    	}
+    	    	
         // salasanan on oltava pituudeltaan v‰hint‰‰n 8 merkki‰
     	if (password.length()<8) {
     		return true;
     	}
     	
     	// salasana ei saa koostua pelk‰st‰‰n kirjaimista
+    	if (password.matches("^[a-zA-Z]+$")) {
+    		return true;
+    	}
+    	
+    	// k‰ytt‰j‰tunnus ei saa olla viel‰ k‰ytˆss‰
+    	if (username.length()<3) {
+    		return true;
+    	}
+    	
     	
         return false;
     }

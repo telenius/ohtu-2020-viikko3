@@ -52,21 +52,7 @@
 
 ë    [32mWhen [0m[32musername [0m[32m[1m"eero"[0m[32m and password [0m[32m[1m"salainen"[0m[32m are entered[0m                                           [90m# Stepdefs.usernameAndWrongPasswordAreEntered(String,String)[0m
 
-¸    [31mThen [0m[31msystem will respond with [0m[31m[1m"new user not registered"[0m                                            [90m# Stepdefs.systemWillRespondWith(String)[0m
-
-%      [31mjava.lang.AssertionError
-
-+	at org.junit.Assert.fail(Assert.java:86)
-
-1	at org.junit.Assert.assertTrue(Assert.java:41)
-
-1	at org.junit.Assert.assertTrue(Assert.java:52)
-
-;	at ohtu.Stepdefs.systemWillRespondWith(Stepdefs.java:79)
-
-l	at ?.system will respond with "new user not registered"(file:src/test/resources/ohtu/new_user.feature:26)
-
-[0m
+¸    [32mThen [0m[32msystem will respond with [0m[32m[1m"new user not registered"[0m                                            [90m# Stepdefs.systemWillRespondWith(String)[0m
 
 u  Scenario: can login with successfully generated account     [90m# src/test/resources/ohtu/new_user.feature:28[0m
 ²    [32mGiven [0m[32muser [0m[32m[1m"eero"[0m[32m with password [0m[32m[1m"salainen1"[0m[32m is created[0m    [90m# Stepdefs.commandUserCreated(String,String)[0m
