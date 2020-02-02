@@ -1,1 +1,1 @@
-Feature: A new user account can be created if a proper unused username and password are given
+Feature: A_new_user_account_can_be_created_if_a_proper_unused_username_and_password_are_given

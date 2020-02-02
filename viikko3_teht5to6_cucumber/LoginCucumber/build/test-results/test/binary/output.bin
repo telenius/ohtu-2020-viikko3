@@ -1,0 +1,16 @@
+BFeature: User_can_log_in_with_valid_username/password-combination
+
+n  Scenario: user can login with correct password           [90m# src/test/resources/ohtu/login.feature:3[0m
+x    [32mGiven [0m[32mcommand login is selected[0m                        [90m# Stepdefs.commandLoginSelected()[0m
+¿    [32mWhen [0m[32musername [0m[32m[1m"pekka"[0m[32m and password [0m[32m[1m"akkep"[0m[32m are entered[0m [90m# Stepdefs.usernameAndWrongPasswordAreEntered(String,String)[0m
+Œ    [32mThen [0m[32msystem will respond with [0m[32m[1m"logged in"[0m              [90m# Stepdefs.systemWillRespondWith(String)[0m
+
+t  Scenario: user can not login with incorrect password           [90m# src/test/resources/ohtu/login.feature:8[0m
+~    [32mGiven [0m[32mcommand login is selected[0m                              [90m# Stepdefs.commandLoginSelected()[0m
+À    [32mWhen [0m[32musername [0m[32m[1m"pekka"[0m[32m and wrong password [0m[32m[1m"pakki"[0m[32m are entered[0m [90m# Stepdefs.usernameAndPasswordAreEntered(String,String)[0m
+’    [32mThen [0m[32msystem will respond with [0m[32m[1m"wrong username or password"[0m   [90m# Stepdefs.systemWillRespondWith(String)[0m
+
+}  Scenario: nonexistent user can not login to                            [90m# src/test/resources/ohtu/login.feature:13[0m
+†    [32mGiven [0m[32mcommand login is selected[0m                                      [90m# Stepdefs.commandLoginSelected()[0m
+Í    [32mWhen [0m[32mnonexistent username [0m[32m[1m"kissa"[0m[32m and a password [0m[32m[1m"kassi"[0m[32m are entered[0m [90m# Stepdefs.wrongUsernameAndpasswordAreEntered(String,String)[0m
+š    [32mThen [0m[32msystem will respond with [0m[32m[1m"wrong username or password"[0m           [90m# Stepdefs.systemWillRespondWith(String)[0m

@@ -31,7 +31,7 @@ public class Stepdefs {
     }
 
     @When("username {string} and password {string} are entered")
-    public void usernameAndPasswordAreEntered(String username, String password) {
+    public void usernameAndWrongPasswordAreEntered(String username, String password) {
        inputLines.add(username);
        inputLines.add(password);
        
@@ -39,6 +39,28 @@ public class Stepdefs {
        app = new App(io, auth);
        app.run();
     }    
+    
+    @When("username {string} and wrong password {string} are entered")
+    public void usernameAndPasswordAreEntered(String username, String password) {
+       inputLines.add(username);
+       inputLines.add(password+"wrong");
+       
+       io = new StubIO(inputLines); 
+       app = new App(io, auth);
+       app.run();
+    }
+    
+    @When("nonexistent username {string} and a password {string} are entered")
+    public void wrongUsernameAndpasswordAreEntered(String username, String password) {
+       inputLines.add(username+"wrong");
+       inputLines.add(password);
+       
+       io = new StubIO(inputLines); 
+       app = new App(io, auth);
+       app.run();
+    }
+    
+    
     
     @Then("system will respond with {string}")
     public void systemWillRespondWith(String expectedOutput) {
