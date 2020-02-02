@@ -1,5 +1,6 @@
 package ohtu;
 
+import java.util.ArrayList;
 import com.google.gson.Gson;
 import java.io.IOException;
 import org.apache.http.client.fluent.Request;
@@ -16,12 +17,20 @@ public class Main {
         Gson mapper = new Gson();
         Player[] players = mapper.fromJson(bodyText, Player[].class);
         
-        System.out.println("\nSuomalaiset pelaajat :\n");
+        // Vain suomalaiset
+        ArrayList<Player> suomipelaajat = new ArrayList<Player>();
         for (Player player : players) {
         	if( player.getNationality().equals("FIN") ) {
-        		System.out.println(player);
+        		suomipelaajat.add(player);
         	}
         }   
+        
+        
+        System.out.println("\nSuomalaiset pelaajat :\n");
+        for (Player player : suomipelaajat) {
+        	System.out.println(player);
+        } 
+        
     }
   
 }
