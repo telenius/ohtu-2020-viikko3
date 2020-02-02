@@ -81,7 +81,13 @@ public class Player implements Comparable<Player>{
 
     @Override
     public String toString() {
-        return name + "\t" + team + "\t" + goals + " + " + assists + " = " + points;
+        
+    	String nametulostus = String.format("%-20s", name);
+    	String goaltul = String.format("%3s", goals);
+    	String assiststul = String.format("%3s", assists);
+    	String pointstul = String.format("%3s", points);
+    	
+    	return nametulostus + "\t" + team + "\t" + goaltul + "  + " + assiststul + "  = " + pointstul;
         
     	// goals :0
     	// assists :1
