@@ -1,6 +1,8 @@
 package ohtu;
 
 import java.util.ArrayList;
+import java.util.Collections;
+
 import com.google.gson.Gson;
 import java.io.IOException;
 import org.apache.http.client.fluent.Request;
@@ -17,16 +19,20 @@ public class Main {
         Gson mapper = new Gson();
         Player[] players = mapper.fromJson(bodyText, Player[].class);
         
-        // Vain suomalaiset
+        // Vain suomalaiset, lasketaan samalla pisteiden summa
         ArrayList<Player> suomipelaajat = new ArrayList<Player>();
         for (Player player : players) {
         	if( player.getNationality().equals("FIN") ) {
         		suomipelaajat.add(player);
+        		player.setPoints();
         	}
         }   
+        players=null;
         
         
         System.out.println("\nSuomalaiset pelaajat :\n");
+        
+        Collections.sort(suomipelaajat);
         for (Player player : suomipelaajat) {
         	System.out.println(player);
         } 
