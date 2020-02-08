@@ -30,6 +30,25 @@ public class Stepdefs {
         element.click();  
     }
 
+    @Given("user with username {string} with password {string} is successfully created")
+    public void userWithUsernameWithPasswordIsSuccessfullyCreated(String username, String password) {
+        driver.get(baseUrl);
+        WebElement element = driver.findElement(By.linkText("register new user"));       
+        element.click();
+        
+    	createUserWith(username, password, password);
+    }
+
+    @Given("user with username {string} and password {string} is tried to be created")
+    public void userWithUsernameAndPasswordIsTriedToBeCreated(String username, String password) {
+        driver.get(baseUrl);
+        WebElement element = driver.findElement(By.linkText("register new user"));       
+        element.click();
+        
+    	createUserWith(username, password, password);
+    }
+
+    
     @When("correct username {string} and password {string} are given")
     public void correctUsernameAndPasswordAreGiven(String username, String password) {
         logInWith(username, password);
@@ -67,9 +86,6 @@ public class Stepdefs {
     }
     
 
-    // new stufffffff
-    
-
     @When("a valid username {string} and password {string} and matching password confirmation are entered")
     public void aValidUsernameAndPasswordAndConfirmationAreEntered(String username, String password) throws Throwable {
         createUserWith(username, password, password);
@@ -102,9 +118,18 @@ public class Stepdefs {
     public void aValidUsernameAndPasswordAndNonMatchingConfirmationAreEntered(String username, String password, String wrongpassconf) {
         createUserWith(username, password, wrongpassconf);
     }
+   
+    @When("the newly generated username {string} and password {string} are entered")
+    public void theNewlyGeneratedUsernameAndPasswordAreEntered(String username, String password) throws Throwable {
+        logInWith(username, password);
+    }
 
-    
-    // new stuffff ends
+
+    @When("the unsuccesful username {string} and password {string} are entered")
+    public void theUnsuccesfulUsernameAndPasswordAreEntered(String username, String password) {
+        logInWith(username, password);
+    }
+
     
     @After
     public void tearDown(){
